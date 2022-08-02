@@ -1,0 +1,30 @@
+@import './global.scss';
+
+.app{
+    height: 100vh;
+
+    .sections{
+    font-size: 1.6rem;
+    line-height: 1.5;
+    //  height: calc(100vh - 70px);
+    // top: 70px;
+    font-family: "Open Sans",sans-serif;
+    color: #fff;
+    overflow: hidden;
+    //margin: 0 0;
+    width: 100%;
+    position: relative;
+    //scroll-snap-type: y mandatory;
+    //background-color: $primary;
+    // background-image: url('../public/bg4.jpg');
+    //background-repeat: repeat-y;
+    //padding-left: 10rem;
+    scroll-behavior: smooth!important;
+    scrollbar-width: none;//for firefox
+    &::-webkit-scrollbar{
+        display: none;
+    }
+}
+    
+    
+}

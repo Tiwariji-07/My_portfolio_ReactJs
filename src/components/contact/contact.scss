@@ -1,0 +1,326 @@
+@import '../../global.scss';
+
+
+.c {
+    height: 100vh;
+    position: relative;
+    background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);  
+    
+    
+  }
+  
+  .c-bg {
+    width: 10px;
+    height: 100%;
+    background-color: $fourthColor;
+    position: absolute;
+    align-items: center;
+  }
+  
+  .c-wrapper {
+    padding: 50px;
+    display: flex;
+    
+  }
+  
+  .c-left {
+    flex: 1;
+    //background-image: url();
+    
+  }
+  
+  .c-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .c-title {
+    font-size: 50px;
+    width: 80%;
+    position: relative;
+    font-family: font-file-82132;
+    margin-top: 1rem;
+    &::before{
+      content: '<h2>';
+      font-family: 'La Belle Aurore',cursive;
+      color: #A8EB12;
+      font-size: 18px;
+      position: absolute;
+      margin-top: -1rem;
+      left: -1rem;
+    }
+
+    &::after{
+      content: '<h2/>';
+      font-family: 'La Belle Aurore',cursive;
+      color: #A8EB12;
+      font-size: 18px;
+      position: absolute;
+      left: -1rem;
+      bottom: -1rem;
+    }
+    
+  }
+
+  .c-title-blast{
+    transition: all 0.3s ease-out;
+    opacity: 1;
+    display: inline-block;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    animation-iteration-count: 1;
+    color: $fourthColor;
+    
+
+    &:hover{
+        
+        animation-name: rubberBand;
+
+        
+    }
+    @keyframes rubberBand {
+        from {
+            transform: scale3d(1, 1, 1);
+        }
+        
+        30% {
+            transform: scale3d(1.25, 0.75, 1);
+        }
+        
+        40% {
+            transform: scale3d(0.75, 1.25, 1);
+        }
+        
+        50% {
+            transform: scale3d(1.15, 0.85, 1);
+        }
+        
+        65% {
+            transform: scale3d(.95, 1.05, 1);
+        }
+        
+        75% {
+            transform: scale3d(1.05, .95, 1);
+        }
+        
+        to {
+            transform: scale3d(1, 1, 1);
+        }
+        }
+  }
+
+  .c-info{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    // justify-content: center;
+    // align-items: center;
+  }
+  .c-info-item {
+    display: block;
+    align-items: center;
+    margin: 10px 0px;
+    font-weight: 500;
+    width: 70%;
+    color: white;
+    font-size: 20px;
+    // &:hover{
+    //   font-weight: 900;
+    // }
+
+    &:first-of-type::before{
+      content: '<contact>'; 
+      font-family: 'La Belle Aurore',cursive;
+      color: #A8EB12;
+      font-size: 18px;
+      position: absolute;
+      margin-top: -2rem;
+      left: -1rem;
+    }
+
+    &:last-of-type::after{
+      content: '<contact/>';
+      font-family: 'La Belle Aurore',cursive;
+      color: #A8EB12;
+      font-size: 18px;
+      position: absolute;
+      left: -1rem;
+      bottom: -2rem;
+    }
+  }
+  
+  .c-icon {
+    width: 30px;
+    height: 30px;
+    margin-left: 20px;
+    margin-right: 20px;
+    color: $fourthColor;
+    // outline-color: $fourthColor;
+  }
+  
+  .c-desc {
+    font-weight: 500;
+    font-size: 20px;
+    //color: $fourthColor;
+    
+      display: block;
+      position: relative;
+      &:first-of-type::before{
+        content: '<p>'; 
+        font-family: 'La Belle Aurore',cursive;
+        color: #A8EB12;
+        font-size: 18px;
+        position: absolute;
+        margin-top: -2rem;
+        margin-left: -1rem;
+      }
+  
+      &:last-of-type::after{
+        content: '<p/>';
+        font-family: 'La Belle Aurore',cursive;
+        color: #A8EB12;
+        font-size: 18px;
+        position: absolute;
+        left: -1rem;
+        bottom: -2rem;
+      }
+    
+  }
+  
+  form {
+    margin-top: 40px;
+    display: block;
+    position: relative;
+    &:first-of-type::before{
+      content: '<form>'; 
+      font-family: 'La Belle Aurore',cursive;
+      color: #A8EB12;
+      font-size: 18px;
+      position: absolute;
+      margin-top: -2rem;
+      margin-left: -1rem;
+    }
+
+    &:last-of-type::after{
+      content: '<form/>';
+      font-family: 'La Belle Aurore',cursive;
+      color: #A8EB12;
+      font-size: 18px;
+      position: absolute;
+      left: -1rem;
+      bottom: -2rem;
+    }
+  }
+  
+  input {
+    width: 50%;
+    height: 30px;
+    color: white;
+    border: 0;
+    outline: none;
+    border: 1px solid $thirdColor;
+    margin: 10px 0px;
+    font-size: 14px;
+    padding-left: 10px;
+    border-radius: 10px;
+    background-color: $primary;
+
+    // &:hover{
+    //   //background-color: $primary;
+    //   border: none;
+    // }
+
+  }
+  
+  textarea {
+    width: 70%;
+    margin: 10px 0px;
+    font-size: 14px;
+    padding-left: 10px;
+    border: none;
+    outline: none;
+    color: white;
+    border: 1px solid $thirdColor;
+    border-radius: 10px;
+    background-color: $primary;
+
+    // &:hover{
+    //   background-color: $primary;
+    // }
+  }
+
+  
+  button {
+    width: 20%;
+    border: 1px solid $fourthColor;
+    padding: 15px;
+    font-size: 14px;
+    //background-color: $primary;
+    color: $fourthColor;
+    font-weight: 500;
+    cursor: pointer;
+    // border-radius: 10px;
+    //transition: all .5s ease;
+    // &:hover{
+    //   background-color: $primary;
+    //   color: $fourthColor;
+    //   font-weight: 900;
+    //   font-size: 15px;
+    // }
+    background: linear-gradient(to right, $fourthColor 50%, $primary 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    transition: all .5s ease-out;
+    &:hover{
+        color: $primary;
+        background-position: left bottom;
+        // font-weight: 700;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .c-wrapper {
+      flex-direction: column;
+      padding: 0px 50px;
+    }
+  
+    .c-title {
+      font-size: 30px;
+    }
+  
+    .c-info-item {
+      margin: 10px 0px;
+      width: 100%;
+      font-size: 14px;
+    }
+  
+    .c-desc {
+      display: none;
+      
+    }
+  
+    form {
+      margin-top: 0px;
+      display: flex;
+      flex-wrap: wrap;
+      
+    }
+  
+    input {
+      width: 35%;
+      height: 40px;
+      margin: 7px;
+      margin-left: 0;
+      background-color: none;
+      
+    }
+  
+    button {
+      margin-top: 5px;
+      height: 20px;
+      //border-radius: 5px;
+    }
+  }
