@@ -4,8 +4,18 @@
 .c {
     height: 100vh;
     position: relative;
-    background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);  
-    
+    //background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);  
+    background-image: url('../../../public/astro8.png');
+    background-repeat: no-repeat;
+    background-position-x: 40%;
+    background-position-y: 100%,25%;
+    background-size: 15%,8%;
+
+    @include mobile{
+      background-position-x: 90%;
+      background-position-y: 100%,25%;
+      background-size: 15%,8%;
+    }
     
   }
   
@@ -20,6 +30,11 @@
   .c-wrapper {
     padding: 50px;
     display: flex;
+    @include mobile{
+      padding: 30px;
+      flex-direction: column;
+      // padding: 0px 50px;
+    }
     
   }
   
@@ -43,6 +58,9 @@
     position: relative;
     font-family: font-file-82132;
     margin-top: 1rem;
+    @include mobile{
+      font-size: 30px;
+    }
     &::before{
       content: '<h2>';
       font-family: 'La Belle Aurore',cursive;
@@ -51,6 +69,9 @@
       position: absolute;
       margin-top: -1rem;
       left: -1rem;
+      @include mobile{
+        font-size: .8rem;
+      }
     }
 
     &::after{
@@ -61,6 +82,9 @@
       position: absolute;
       left: -1rem;
       bottom: -1rem;
+      @include mobile{
+        font-size: .8rem;
+      }
     }
     
   }
@@ -118,6 +142,11 @@
     position: relative;
     // justify-content: center;
     // align-items: center;
+    @include mobile{
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
   }
   .c-info-item {
     display: block;
@@ -127,6 +156,13 @@
     width: 70%;
     color: white;
     font-size: 20px;
+    @include mobile{
+      margin: 5px 0px;
+      width: 100%;
+      font-size: 14px;
+      display: flex;
+      flex-wrap: wrap;
+    }
     // &:hover{
     //   font-weight: 900;
     // }
@@ -139,6 +175,9 @@
       position: absolute;
       margin-top: -2rem;
       left: -1rem;
+      @include mobile{
+        font-size: .8rem;
+      }
     }
 
     &:last-of-type::after{
@@ -149,6 +188,10 @@
       position: absolute;
       left: -1rem;
       bottom: -2rem;
+      @include mobile{
+        font-size: .8rem;
+        bottom: -1rem;
+      }
     }
   }
   
@@ -159,34 +202,42 @@
     margin-right: 20px;
     color: $fourthColor;
     // outline-color: $fourthColor;
+    @include mobile{
+      margin-left: 10px;
+      margin-right: 10px;
+      height: 20px;
+      width: 20px;
+    }
   }
   
   .c-desc {
     font-weight: 500;
     font-size: 20px;
     //color: $fourthColor;
-    
-      display: block;
-      position: relative;
-      &:first-of-type::before{
-        content: '<p>'; 
-        font-family: 'La Belle Aurore',cursive;
-        color: #A8EB12;
-        font-size: 18px;
-        position: absolute;
-        margin-top: -2rem;
-        margin-left: -1rem;
-      }
-  
-      &:last-of-type::after{
-        content: '<p/>';
-        font-family: 'La Belle Aurore',cursive;
-        color: #A8EB12;
-        font-size: 18px;
-        position: absolute;
-        left: -1rem;
-        bottom: -2rem;
-      }
+    display: block;
+    position: relative;
+    @include mobile{
+      display:none;
+    }
+    &:first-of-type::before{
+      content: '<p>'; 
+      font-family: 'La Belle Aurore',cursive;
+      color: #A8EB12;
+      font-size: 18px;
+      position: absolute;
+      margin-top: -2rem;
+      margin-left: -1rem;
+    }
+
+    &:last-of-type::after{
+      content: '<p/>';
+      font-family: 'La Belle Aurore',cursive;
+      color: #A8EB12;
+      font-size: 18px;
+      position: absolute;
+      left: -1rem;
+      bottom: -2rem;
+    }
     
   }
   
@@ -194,6 +245,11 @@
     margin-top: 40px;
     display: block;
     position: relative;
+    @include mobile{
+      margin-top: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+    }
     &:first-of-type::before{
       content: '<form>'; 
       font-family: 'La Belle Aurore',cursive;
@@ -202,6 +258,10 @@
       position: absolute;
       margin-top: -2rem;
       margin-left: -1rem;
+      @include mobile{
+        font-size: .8rem;
+        margin-top: -1rem;
+      }
     }
 
     &:last-of-type::after{
@@ -212,6 +272,10 @@
       position: absolute;
       left: -1rem;
       bottom: -2rem;
+      @include mobile{
+        font-size: .8rem;
+        bottom: -1rem;
+      }
     }
   }
   
@@ -227,6 +291,13 @@
     padding-left: 10px;
     border-radius: 10px;
     background-color: $primary;
+    @include mobile{
+      width: 35%;
+      height: 40px;
+      margin: 5px;
+      margin-left: 0;
+      background-color: none;
+    }
 
     // &:hover{
     //   //background-color: $primary;
@@ -246,6 +317,11 @@
     border: 1px solid $thirdColor;
     border-radius: 10px;
     background-color: $primary;
+    @include mobile{
+      height: 50px;
+      width: 60%;
+      margin: 5px;
+    }
 
     // &:hover{
     //   background-color: $primary;
@@ -262,6 +338,13 @@
     color: $fourthColor;
     font-weight: 500;
     cursor: pointer;
+    @include mobile{
+      margin-top: 15px;
+      height: 30px;
+      margin-left: 10px;
+      padding: 0 0;
+      
+    }
     // border-radius: 10px;
     //transition: all .5s ease;
     // &:hover{
@@ -279,48 +362,7 @@
         background-position: left bottom;
         // font-weight: 700;
     }
-  }
+}
   
-  @media screen and (max-width: 768px) {
-    .c-wrapper {
-      flex-direction: column;
-      padding: 0px 50px;
-    }
   
-    .c-title {
-      font-size: 30px;
-    }
   
-    .c-info-item {
-      margin: 10px 0px;
-      width: 100%;
-      font-size: 14px;
-    }
-  
-    .c-desc {
-      display: none;
-      
-    }
-  
-    form {
-      margin-top: 0px;
-      display: flex;
-      flex-wrap: wrap;
-      
-    }
-  
-    input {
-      width: 35%;
-      height: 40px;
-      margin: 7px;
-      margin-left: 0;
-      background-color: none;
-      
-    }
-  
-    button {
-      margin-top: 5px;
-      height: 20px;
-      //border-radius: 5px;
-    }
-  }

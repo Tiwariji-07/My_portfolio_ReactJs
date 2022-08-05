@@ -3,10 +3,38 @@ $secondary : #323232;
 $thirdColor: #0D7377;
 $fourthColor : #14FFEC;
 
-$width: 1000px;
+$width2: 768px;
+$width1: 380px;
+$width3: 900px;
+$width4: 1100px;
+$width5: 480px;
 
 @mixin mobile {
-    @media (max-width: #{$width}){
+    @media (max-width: #{$width2}){
         @content
     }
-}
+};
+
+@mixin mobile4 {
+    @media (max-width: #{$width5}){
+        @content
+    }
+};
+
+@mixin mobile3 {
+    @media (max-width: #{$width1}){
+        @content
+    }
+};
+
+@mixin mobile9 {
+    @media (max-width: #{$width3}){
+        @content
+    }
+};
+
+@mixin mobile11 {
+    @media (max-width: #{$width4}){
+        @content
+    }
+};

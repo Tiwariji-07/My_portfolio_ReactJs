@@ -1,53 +1,73 @@
-import React from 'react';
+import {React,useEffect,useRef} from 'react';
 import './introduction.scss';
 import Typewriter from 'typewriter-effect';
 import Particles from 'react-tsparticles';
 import FileSaver from 'file-saver';
+import {motion, useAnimation,useInView} from 'framer-motion';
 
 function Introduction() {
+  
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: false });
+  const animation = useAnimation();
+  useEffect(()=>{
+    if(inView){
+      animation.start({
+        y:0,
+        transition:{
+          type:'spring',duration:1.5,bounce:.5,stiffness:50,
+        }
+      })
+    }
+    if(!inView){
+      animation.start({
+        y:'-100vh'
+      })
+    }
+  },[inView]);
+
   const saveFile = () => {
     FileSaver.saveAs(
       process.env.REACT_APP_CLIENT_URL + "/java.png",
       "java.png"
     );};
   return (
-    <section className='introduction' id='introduction'>
-      <div className='bg'></div>
+    <section ref={ref} className='introduction' id='introduction'>
 
-        <div class="text-zone">
+
+
+        <div className="text-zone">
           
           <h1 aria-label=" Hi,  I'm ack,  web developer" class="blast-root"> 
-            <span class="blast" aria-hidden="true" >H</span>
-            <span class="blast" aria-hidden="true" >i</span>
-            <span class="blast" aria-hidden="true" >,</span> 
-            <span class="wave" role="img" aria-labelledby="wave">👋🏻</span>
+            <motion.span animate={animation} className="blast" aria-hidden="true" >H</motion.span>
+            <motion.span animate={animation} className="blast" aria-hidden="true" >i</motion.span>
+            <motion.span animate={animation} className="blast" aria-hidden="true" >,</motion.span> 
             <br />
-            <span class="blast" aria-hidden="true" >I</span>
-            <span class="blast" aria-hidden="true" >'</span>
-            <span class="blast" aria-hidden="true" >m</span>
-
-            <img src="/v2.png" alt="" />
-            <span class="blast" aria-hidden="true" >i</span>
-            <span class="blast" aria-hidden="true" >v</span>
-            <span class="blast" aria-hidden="true" >e</span>
-            <span class="blast" aria-hidden="true" >k</span>
-            <span class="blast" aria-hidden="true" >,</span> 
+            <motion.span animate={animation} className="blast" aria-hidden="true" >I</motion.span>
+            <motion.span animate={animation} className="blast" aria-hidden="true" >'</motion.span>
+            <motion.span animate={animation} className="blast" aria-hidden="true" >m</motion.span>
+            <motion.span animate={animation} className="blast" aria-hidden="true" style={{'padding-left':'.6rem','color':'#0D7377'}} >V</motion.span>
+            <motion.span animate={animation} className="blast" aria-hidden="true" style={{'color':'#0D7377'}}>i</motion.span>
+            <motion.span animate={animation} className="blast" aria-hidden="true" style={{'color':'#0D7377'}}>v</motion.span>
+            <motion.span animate={animation} className="blast" aria-hidden="true" style={{'color':'#0D7377'}}>e</motion.span>
+            <motion.span animate={animation} className="blast" aria-hidden="true" style={{'color':'#0D7377'}}>k</motion.span>
+            <motion.span animate={animation} className="blast" aria-hidden="true" >,</motion.span> 
             <br /> 
-            <span class="blast" aria-hidden="true" >w</span>
-            <span class="blast" aria-hidden="true" >e</span>
-            <span class="blast" aria-hidden="true" >b</span> 
-            <span class="blast" aria-hidden="true" style={{'padding-left':'1rem'}} >d</span>
-            <span class="blast" aria-hidden="true" >e</span>
-            <span class="blast" aria-hidden="true" >v</span>
-            <span class="blast" aria-hidden="true" >e</span>
-            <span class="blast" aria-hidden="true" >l</span>
-            <span class="blast" aria-hidden="true" >o</span>
-            <span class="blast" aria-hidden="true" >p</span>
-            <span class="blast" aria-hidden="true" >e</span>
-            <span class="blast" aria-hidden="true" >r</span>
-            {/* <span class="blast" aria-hidden="true" >👨‍💻</span> */}
+            <motion.span animate={animation} className="blast" aria-hidden="true" >w</motion.span>
+            <motion.span animate={animation} className="blast" aria-hidden="true" >e</motion.span>
+            <motion.span animate={animation} className="blast" aria-hidden="true" >b</motion.span> 
+            <motion.span animate={animation} className="blast" aria-hidden="true" style={{'padding-left':'.6rem'}} >d</motion.span>
+            <motion.span animate={animation} className="blast" aria-hidden="true" >e</motion.span>
+            <motion.span animate={animation} className="blast" aria-hidden="true" >v</motion.span>
+            <motion.span animate={animation} className="blast" aria-hidden="true" >e</motion.span>
+            <motion.span animate={animation} className="blast" aria-hidden="true" >l</motion.span>
+            <motion.span animate={animation} className="blast" aria-hidden="true" >o</motion.span>
+            <motion.span animate={animation} className="blast" aria-hidden="true" >p</motion.span>
+            <motion.span animate={animation} className="blast" aria-hidden="true" >e</motion.span>
+            <motion.span animate={animation} className="blast" aria-hidden="true" >r</motion.span>
+            {/* <span className="blast" aria-hidden="true" >👨‍💻</span> */}
           </h1>
-              <p class="gray-text" style={{"font-family":"Open Sans,sans-serif"}}>
+              <p className="gray-text" style={{"font-family":"Open Sans,sans-serif"}}>
               <Typewriter
                options={{ 
                 strings:["CS Undergraduate","Developer", "Runner"],
@@ -60,13 +80,14 @@ function Introduction() {
               </p>
 
               <br/>
-              <a href='#contact' class="flat-button">
+              <motion.a href='#contact' className="flat-button" whileHover={{ scale: 1.1 }}
+    whileTap={{ scale: 0.9 }}>
                   <div>
-                      <span class="bg"></span>
-                      <span class="base"></span>
-                      <span class="text">Contact me!</span>
+                      <span className="bg"></span>
+                      <span className="base"></span>
+                      <span className="text">Contact me!</span>
                   </div>
-              </a>
+              </motion.a>
               {/* <button className="cv" onClick={saveFile}>
     Download File
 </button> */}

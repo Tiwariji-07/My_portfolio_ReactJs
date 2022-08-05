@@ -1,0 +1,71 @@
+@import '../../global.scss';
+
+.footer{
+    height: 50vh;
+    background-color: $thirdColor;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Roboto Slab';
+    //top: 20px;
+    
+
+    .title{
+        font-size: 40px;
+        color: $primary;
+        font-weight: 700;
+        margin-top: -40px;
+        
+    }
+    .tabs{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 30px;
+
+        
+
+        a{
+            margin-left: 40px;
+            text-decoration: none;
+            font-size: 16px;
+            color: $primary;
+            font-weight: 500;
+        }
+    }
+
+    .profiles{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 40px;
+
+        .btns{
+            margin-left: 20px;
+            height: 40px;
+            width: 50px;
+            padding: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: none;
+            border: none;
+            outline: none;
+            border-radius: 20px;
+
+            a{
+                text-decoration: none;
+                color: white;
+            }
+        }
+
+    }
+
+    .right{
+        font-size: 13px;
+        font-weight: 300;
+        color: $primary;
+        margin-top: 60px;
+    }
+}

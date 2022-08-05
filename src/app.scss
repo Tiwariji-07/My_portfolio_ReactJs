@@ -2,8 +2,11 @@
 
 .app{
     height: 100vh;
-
+    scroll-behavior: smooth;
+    
     .sections{
+        background-color: $primary;
+
     font-size: 1.6rem;
     line-height: 1.5;
     //  height: calc(100vh - 70px);
@@ -19,7 +22,7 @@
     // background-image: url('../public/bg4.jpg');
     //background-repeat: repeat-y;
     //padding-left: 10rem;
-    scroll-behavior: smooth!important;
+    scroll-behavior: smooth;
     scrollbar-width: none;//for firefox
     &::-webkit-scrollbar{
         display: none;
