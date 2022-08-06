@@ -9,6 +9,8 @@ import Skills from './components/skills/Skills';
 import Home from './components/home/Home';
 import {useState} from 'react';
 import Footer from './components/footer/Footer';
+import Navbar from './components/navbar/Navbar';
+import Topbar from './components/topbar/Topbar';
 
 
 
@@ -16,8 +18,7 @@ function App() {
   // const [menuOpen,setMenuOpen] = useState(false)
   return (
     <div className="app">
-      {/* <Topbar open = {menuOpen} setMenuOpen={setMenuOpen}/>
-      <Menu open = {menuOpen} setMenuOpen={setMenuOpen}/> */}
+      <Topbar/>
       <div className="sections">
         {/* <Home/> */}
         <Introduction/>
@@ -26,6 +27,7 @@ function App() {
         <Contact/>
         <Footer/>
       </div>
+      <Navbar/>
     </div>
   );
 }

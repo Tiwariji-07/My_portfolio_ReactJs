@@ -16,6 +16,9 @@
         color: $primary;
         font-weight: 700;
         margin-top: -40px;
+        @include mobile{
+            font-size: 30px;
+        }
         
     }
     .tabs{
@@ -23,6 +26,10 @@
         justify-content: center;
         align-items: center;
         margin-top: 30px;
+        @include mobile{
+            margin-top: 20px;
+
+        }
 
         
 
@@ -32,6 +39,10 @@
             font-size: 16px;
             color: $primary;
             font-weight: 500;
+            @include mobile{
+                margin-left: 10px;
+                font-weight: 500;
+            }
         }
     }
 
@@ -40,6 +51,9 @@
         align-items: center;
         justify-content: center;
         margin-top: 40px;
+        @include mobile{
+            margin-top: 30px;
+        }
 
         .btns{
             margin-left: 20px;
@@ -66,6 +80,6 @@
         font-size: 13px;
         font-weight: 300;
         color: $primary;
-        margin-top: 60px;
+        margin-top: 27px;
     }
 }

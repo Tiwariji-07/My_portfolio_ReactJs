@@ -3,7 +3,7 @@
 .introduction{
     //background-image: linear-gradient(to right bottom, #051937, #004d7a, #008793, #00bf72, #a8eb12);
     background-image: url('../../../public/astro6.png');
-    background-repeat: no-repeat,no-repeat,no-repeat;
+    background-repeat: no-repeat;
     background-position-x: 90%,center;
     background-position-y: 80%,center;
     background-size: 25%,100%;
@@ -19,10 +19,10 @@
     -ms-flex-align: center;
     align-items: center;
     position: relative;
-    padding: 2rem 3rem;
+    padding: 0rem 3rem;
 
     @include mobile{
-        padding:10px 2.5rem;
+        padding:10px 2rem;
     }
     
     
@@ -48,7 +48,7 @@
             margin: 0;
             font-family: font-file-82132;
             font-weight: 400;
-            font-size: 8rem;
+            font-size: 7.5rem;
             line-height: 7rem;
             position: relative;
 
@@ -83,7 +83,7 @@
                 font-size: 1.8rem;
                 position: absolute;
                 margin-top: 3.8rem;
-                margin-left: 2rem;
+                margin-left: -1rem;
 
                 @include mobile{
                     margin-left: 0;

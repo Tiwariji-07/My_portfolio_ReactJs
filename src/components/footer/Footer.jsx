@@ -12,8 +12,7 @@ function Footer() {
             Vivek Raj
         </div>
         <div className='tabs'>
-            <a href="#home">Home</a>
-            <a href="#introduction">Intro</a>
+            <a href="#introduction">Home</a>
             <a href="#skills">About Me</a>
             <a href="#project">Projects</a>
             <a href="#contact">Contact</a>

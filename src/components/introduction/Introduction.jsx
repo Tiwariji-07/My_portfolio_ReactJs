@@ -31,11 +31,11 @@ function Introduction() {
       process.env.REACT_APP_CLIENT_URL + "/java.png",
       "java.png"
     );};
+
   return (
     <section ref={ref} className='introduction' id='introduction'>
 
-
-
+        
         <div className="text-zone">
           
           <h1 aria-label=" Hi,  I'm ack,  web developer" class="blast-root"> 

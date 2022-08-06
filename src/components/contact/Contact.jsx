@@ -56,8 +56,7 @@ function Contact() {
         }
       })
       animation2.start({
-        opacity:1,
-        y:0,
+        x:0,
         transition:{
           type:'tween',duration:1,delay:0
         }
@@ -71,8 +70,7 @@ function Contact() {
         x:'100vw'
       })
       animation2.start({
-        opacity:0,
-        y:'100vh'
+        x:'100vw'
       })
     }
   },[inView]);
@@ -127,9 +125,9 @@ function Contact() {
         <div className="c-right">
           <motion.p className="c-desc" animate={animation1} viewport={{amount:1}}>
              I’m interested in Software Development opportunities. 
-             However, if you have other request or question, don’t hesitate to use the form.
+             However, if you have other request or question or if you just want to say something, don’t hesitate to use the form.
           </motion.p>
-          <motion.form ref={formRef} onSubmit={handleSubmit} animate={animation2} viewport={{amount:.5}}>
+          <motion.form ref={formRef} onSubmit={handleSubmit} animate={animation2} viewport={{amount:.6}}>
             <input  type="text" placeholder="Name" name="user_name" />
             <span className='border'></span>
             <input  type="text" placeholder="Subject" name="user_subject" />

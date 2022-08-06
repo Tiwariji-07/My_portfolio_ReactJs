@@ -1,1 +1,48 @@
 @import '../../global.scss';
+
+.navbar{
+    //height: 60px;
+    position: fixed;
+    top: 0;
+    z-index: 3;
+    display: flex;
+    //align-items: center;
+    justify-content: center;
+    margin-left: 35%;
+    align-items: flex-end;
+    margin-top: 90vh;
+    @include mobile{
+        margin-left: calc(50vw - 175px);
+    }
+    
+    
+    .container{
+        width: 30vw;
+        height: 50px;
+        background: rgba(42, 194, 225, .1);
+        //box-shadow: 0 8px 32px 0 #323232;
+        backdrop-filter: blur( 1.5px );
+        -webkit-backdrop-filter: blur( 1.5px );
+        //border-radius: 10px;
+        //border: 1px solid rgba( 255, 255, 255, 0.18 );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 30px;
+
+        @include mobile{
+            width: 350px;
+        }
+        
+        
+        .item{
+            margin: 20px;
+            font-size: 30px;
+            color: $fourthColor;
+            border-radius: 40px;
+            height: 30px;
+            font-weight: 200;
+            cursor: pointer;
+        }
+    }
+}
