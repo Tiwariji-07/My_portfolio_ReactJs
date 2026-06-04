@@ -34,6 +34,32 @@ VITE_EMAILJS_PUBLIC_KEY=your_public_key
 
 The EmailJS public key is intended to be exposed client-side.
 
+## Deployment (GitHub Pages)
+
+The site auto-deploys to **GitHub Pages** via GitHub Actions
+([`.github/workflows/deploy.yml`](.github/workflows/deploy.yml)) on every push to
+`master`.
+
+One-time setup:
+
+1. In the repo, go to **Settings → Pages → Build and deployment** and set
+   **Source** to **GitHub Actions**.
+2. (Optional) Add `VITE_EMAILJS_*` repository secrets to override the contact-form
+   defaults at build time.
+3. Push to `master` (or run the workflow manually from the **Actions** tab).
+
+The site is served from a subpath, so Vite's `base` is set to
+`/My_portfolio_ReactJs/` in `vite.config.js`. Public assets are resolved through
+`import.meta.env.BASE_URL` (see the `asset()` helper in
+`src/data/portfolio.js`) so they work both locally and on Pages.
+
+If you later move to a **custom domain** or a `username.github.io` user page,
+build with `BASE_PATH=/`:
+
+```bash
+BASE_PATH=/ npm run build
+```
+
 ## Editing content
 
 All site content (bio, skills, projects, social links, contact details) lives in
