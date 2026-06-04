@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { profile, navLinks, socials } from '../data/portfolio.js'
+import { profile, navLinks, socials, asset } from '../data/portfolio.js'
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
@@ -58,6 +58,14 @@ export default function Navbar() {
               </a>
             ))}
             <a
+              href={asset(profile.resume)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="ul label text-muted transition-colors hover:text-ink"
+            >
+              Résumé
+            </a>
+            <a
               href="#contact"
               className="rounded-full bg-ink px-5 py-2.5 font-mono text-xs uppercase tracking-wider text-bg transition-colors hover:bg-accent hover:text-ink"
             >
@@ -101,7 +109,8 @@ export default function Navbar() {
               </li>
             ))}
           </ul>
-          <div className="mt-12 flex gap-6">
+          <div className="mt-12 flex flex-wrap gap-6">
+            <a href={asset(profile.resume)} target="_blank" rel="noopener noreferrer" onClick={() => setOpen(false)} className="label text-ink">Résumé ↗</a>
             <a href={socials.github} target="_blank" rel="noopener noreferrer" className="label text-muted">GitHub</a>
             <a href={socials.linkedin} target="_blank" rel="noopener noreferrer" className="label text-muted">LinkedIn</a>
             <a href={`mailto:${profile.email}`} className="label text-muted">Email</a>

@@ -68,14 +68,16 @@ export default function Hero() {
             transition={{ delay: 0.5, duration: 1, ease }}
             className="relative mx-auto w-full max-w-[20rem] lg:mx-0"
           >
-            <div className="absolute inset-x-6 bottom-0 top-10 -z-10 rounded-full bg-accent" aria-hidden="true" />
-            <img
-              src={asset(profile.photo)}
-              onError={onImgError}
-              alt={`${profile.name}, ${profile.role}`}
-              className="w-full select-none object-contain"
-              draggable="false"
-            />
+            <div className="absolute -bottom-3 -right-3 -z-10 h-full w-full rounded-3xl bg-accent" aria-hidden="true" />
+            <div className="overflow-hidden rounded-3xl border border-ink/10 bg-ink">
+              <img
+                src={asset(profile.photo)}
+                onError={onImgError}
+                alt={`${profile.name}, ${profile.role}`}
+                className="aspect-[4/5] w-full select-none object-cover"
+                draggable="false"
+              />
+            </div>
           </motion.div>
         </div>
 

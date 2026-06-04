@@ -15,8 +15,7 @@ export const profile = {
   // Drop your cutout at public/vivek.png — it will be used automatically.
   photo: 'vivek.png',
   photoFallback: 'me.jpeg',
-  // Add public/resume.pdf to enable the résumé link (falls back to GitHub).
-  resume: 'resume.pdf',
+  resume: 'Vivek_Raj_Resume.pdf',
   // Big hero statement — the highlighted word gets the accent block.
   headline: ['I build', 'AI', 'that ships.'],
   subhead:

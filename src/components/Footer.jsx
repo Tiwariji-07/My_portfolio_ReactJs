@@ -1,11 +1,12 @@
 import { ArrowUp } from 'lucide-react'
 import { motion } from 'motion/react'
-import { profile, navLinks, socials } from '../data/portfolio.js'
+import { profile, navLinks, socials, asset } from '../data/portfolio.js'
 
 const links = [
   { label: 'GitHub', href: socials.github },
   { label: 'LinkedIn', href: socials.linkedin },
   { label: 'LeetCode', href: socials.leetcode },
+  { label: 'Résumé', href: asset(profile.resume) },
 ]
 
 export default function Footer() {
