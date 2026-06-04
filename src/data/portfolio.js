@@ -105,7 +105,7 @@ export const achievements = [
 
 export const emailConfig = {
   serviceId: import.meta.env.VITE_EMAILJS_SERVICE_ID || 'service_b8myste',
-  templateId: import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'template_iqe03i8',
+  templateId: import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'template_v8r2yj3',
   publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY || 'vMqWoS2hNXjKooAUI',
 }
 
