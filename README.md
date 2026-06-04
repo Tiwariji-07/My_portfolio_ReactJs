@@ -1,18 +1,33 @@
 # Vivek Raj — Portfolio
 
 A fast, responsive personal portfolio for **Vivek Raj**, Software Development
-Engineer (AI systems — RAG, agents, MCP). Designed as an *editorial engineering
-dossier*: warm paper, ink black, a single vermilion accent, hairline rules and
-numbered sections.
+Engineer (AI systems — RAG, agents, MCP). A **bold minimal** design: off-white +
+ink black, oversized grotesk type, one acid-lime accent, and rich interactive
+motion.
 
 ## Tech stack
 
 - **[Vite](https://vitejs.dev/)** + **[React 19](https://react.dev/)** — fast dev server and build (replaces the deprecated Create React App)
 - **[Tailwind CSS v4](https://tailwindcss.com/)** — design system and styling
-- **[Motion](https://motion.dev/)** — staggered load reveals and subtle micro-interactions
+- **[Motion](https://motion.dev/)** — load reveals, mask text, micro-interactions
+- **[Lenis](https://lenis.darkroom.engineering/)** — smooth momentum scrolling
 - **[lucide-react](https://lucide.dev/)** — UI icons (brand marks are inline SVGs)
 - **[EmailJS](https://www.emailjs.com/)** — contact form delivery (no backend required)
-- **Type**: [Fraunces](https://fonts.google.com/specimen/Fraunces) (display) · [Hanken Grotesk](https://fonts.google.com/specimen/Hanken+Grotesk) (body) · [JetBrains Mono](https://fonts.google.com/specimen/JetBrains+Mono) (metadata)
+- **Type**: [Archivo](https://fonts.google.com/specimen/Archivo) (display & body) · [Space Mono](https://fonts.google.com/specimen/Space+Mono) (labels)
+
+### Interactions
+
+Custom blend-mode cursor, magnetic buttons, an infinite capability marquee,
+invert-on-hover work rows, scroll/word-mask reveals, and an animated giant-name
+footer. Everything degrades gracefully and respects `prefers-reduced-motion`;
+the custom cursor and magnetic effects are disabled on touch devices.
+
+## Add your photo
+
+The hero/portrait uses `public/vivek.png`. Drop a **transparent-background
+cutout** there (PNG) and it appears automatically with the lime backdrop. Until
+then it falls back to `public/me.jpeg`. To change the file name, edit
+`profile.photo` in `src/data/portfolio.js`.
 
 ## Getting started
 
@@ -79,18 +94,19 @@ src/
   App.jsx                # Page composition
   data/portfolio.js      # Single source of truth for content
   components/
-    Navbar.jsx           # Sticky nav with active-section highlighting
-    Hero.jsx             # Editorial intro / landing
-    About.jsx            # Narrative + facts
-    Experience.jsx       # Work history (timeline)
-    Projects.jsx         # Selected work (typographic entries)
-    Skills.jsx           # Toolkit + education + achievements
-    Contact.jsx          # EmailJS contact form
-    Footer.jsx           # Footer + socials
-    Section.jsx          # Numbered editorial section shell
-    Reveal.jsx           # Scroll-reveal animation wrapper
+    SmoothScroll.jsx     # Lenis momentum scroll + anchor handling
+    Cursor.jsx           # Custom blend-mode cursor
+    Magnetic.jsx         # Magnetic hover wrapper
+    Marquee.jsx          # Infinite capability marquee
+    Reveal.jsx           # Scroll reveal + word-mask heading reveal
+    Navbar.jsx           # Minimal nav + full-screen mobile menu
+    Hero.jsx             # Oversized headline + portrait
+    Work.jsx             # Selected work (invert-on-hover rows)
+    About.jsx            # Personal story + toolkit + trajectory
+    Contact.jsx          # Big CTA + EmailJS form
+    Footer.jsx           # Animated giant-name footer
     BrandIcons.jsx       # Inline GitHub/LinkedIn/WhatsApp SVGs
-public/                  # Static assets (portrait, favicon)
+public/                  # Static assets (vivek.png portrait, me.jpeg fallback, favicon)
 ```
 
 ## Accessibility & performance notes

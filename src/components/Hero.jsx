@@ -1,99 +1,108 @@
 import { motion } from 'motion/react'
-import { ArrowUpRight, ArrowDown } from 'lucide-react'
-import { GithubIcon, LinkedinIcon } from './BrandIcons.jsx'
-import { profile, socials, stats, asset } from '../data/portfolio.js'
+import { ArrowDownRight } from 'lucide-react'
+import Magnetic from './Magnetic.jsx'
+import { profile, asset } from '../data/portfolio.js'
 
-const stagger = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.09, delayChildren: 0.1 } },
+const ease = [0.16, 1, 0.3, 1]
+const up = {
+  hidden: { y: '110%' },
+  visible: (i = 0) => ({ y: 0, transition: { duration: 0.9, ease, delay: 0.1 + i * 0.08 } }),
 }
-const rise = {
-  hidden: { opacity: 0, y: 24 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] } },
+
+function Line({ children, i }) {
+  return (
+    <span className="block overflow-hidden">
+      <motion.span variants={up} custom={i} className="block">
+        {children}
+      </motion.span>
+    </span>
+  )
 }
 
 export default function Hero() {
+  const onImgError = (e) => {
+    if (!e.currentTarget.dataset.fallback) {
+      e.currentTarget.dataset.fallback = '1'
+      e.currentTarget.src = asset(profile.photoFallback)
+    }
+  }
+
   return (
-    <section id="home" className="container-px mx-auto max-w-6xl pt-28 pb-16 sm:pt-36">
-      <motion.div variants={stagger} initial="hidden" animate="visible">
-        <motion.p variants={rise} className="label flex flex-wrap items-center gap-x-3 gap-y-1 text-muted">
-          <span className="text-ink">{profile.name}</span>
-          <span className="text-faint">/</span>
-          <span>
-            {profile.role} <span className="text-accent">@ {profile.company}</span>
-          </span>
-          <span className="text-faint">/</span>
-          <span>{profile.location}</span>
-        </motion.p>
-
-        <motion.h1
-          variants={rise}
-          className="mt-8 max-w-5xl text-balance text-[2.75rem] font-semibold leading-[1.02] tracking-tight sm:text-7xl lg:text-[5.25rem]"
+    <section id="home" className="relative min-h-screen overflow-hidden">
+      <div className="container-px mx-auto flex min-h-screen max-w-[1600px] flex-col justify-end pb-10 pt-28">
+        {/* meta row */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.3, duration: 0.8 }}
+          className="mb-8 flex flex-wrap items-center gap-x-6 gap-y-2"
         >
-          {profile.statement[0]}{' '}
-          <span className="display-italic text-accent">{profile.statement[1]}</span>{' '}
-          {profile.statement[2]}{' '}
-          <span className="text-muted">{profile.statement[3]}</span>
-        </motion.h1>
+          <span className="label flex items-center gap-2 text-ink">
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-75" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
+            </span>
+            {profile.available}
+          </span>
+          <span className="label text-muted">/ {profile.location}</span>
+        </motion.div>
 
-        <div className="mt-14 grid gap-10 lg:grid-cols-[1.35fr_0.65fr] lg:gap-16">
-          <motion.div variants={rise}>
-            <p className="max-w-xl text-lg leading-relaxed text-ink-soft">{profile.intro}</p>
+        <div className="grid items-end gap-10 lg:grid-cols-[1.45fr_0.55fr]">
+          {/* headline */}
+          <motion.h1
+            initial="hidden"
+            animate="visible"
+            transition={{ staggerChildren: 0.06 }}
+            className="display text-[clamp(3.2rem,13vw,12rem)]"
+          >
+            <Line i={0}>{profile.headline[0]}</Line>
+            <Line i={1}>
+              <span className="hl">{profile.headline[1]}</span> {profile.headline[2]}
+            </Line>
+          </motion.h1>
 
-            <div className="mt-9 flex flex-wrap items-center gap-x-8 gap-y-4">
-              <a
-                href="#work"
-                className="group inline-flex items-center gap-2 bg-ink px-6 py-3.5 font-mono text-xs uppercase tracking-[0.15em] text-paper transition-colors hover:bg-accent"
-              >
-                Selected work
-                <ArrowUpRight size={15} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-              </a>
-              <a href="#contact" className="link-underline label text-ink">
-                Get in touch
-              </a>
-              <div className="flex items-center gap-4 text-ink-soft">
-                <a href={socials.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="transition-colors hover:text-accent">
-                  <GithubIcon size={19} />
-                </a>
-                <a href={socials.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="transition-colors hover:text-accent">
-                  <LinkedinIcon size={19} />
-                </a>
-              </div>
-            </div>
-          </motion.div>
-
-          <motion.div variants={rise} className="relative lg:justify-self-end">
-            <div className="absolute -right-2 -top-2 hidden h-full w-full border border-line-strong lg:block" aria-hidden="true" />
-            <div className="relative max-w-[16rem] overflow-hidden border border-line-strong bg-paper-2">
-              <img
-                src={asset('me.jpeg')}
-                alt={`Portrait of ${profile.name}`}
-                className="aspect-[4/5] w-full object-cover grayscale-[0.45] [filter:grayscale(0.45)_sepia(0.12)_contrast(1.05)] transition-[filter] duration-500 hover:[filter:grayscale(0)_sepia(0)]"
-                loading="eager"
-              />
-            </div>
-            <p className="label mt-3 text-faint">Fig. 01 — Hyderabad, IN</p>
+          {/* portrait */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.96 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.5, duration: 1, ease }}
+            className="relative mx-auto w-full max-w-[20rem] lg:mx-0"
+          >
+            <div className="absolute inset-x-6 bottom-0 top-10 -z-10 rounded-full bg-accent" aria-hidden="true" />
+            <img
+              src={asset(profile.photo)}
+              onError={onImgError}
+              alt={`${profile.name}, ${profile.role}`}
+              className="w-full select-none object-contain"
+              draggable="false"
+            />
           </motion.div>
         </div>
 
-        <motion.dl variants={rise} className="rule mt-16 grid grid-cols-2 gap-px sm:grid-cols-4">
-          {stats.map((s) => (
-            <div key={s.label} className="pt-5 pr-4">
-              <dt className="font-display text-3xl font-semibold sm:text-4xl">{s.value}</dt>
-              <dd className="mt-2 max-w-[14ch] text-sm leading-snug text-muted">{s.label}</dd>
-            </div>
-          ))}
-        </motion.dl>
-
-        <motion.a
-          variants={rise}
-          href="#about"
-          className="label mt-14 inline-flex items-center gap-2 text-muted transition-colors hover:text-accent"
+        {/* subhead + CTAs */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.7, duration: 0.8, ease }}
+          className="mt-12 grid gap-8 border-t border-line pt-8 md:grid-cols-[1.4fr_1fr] md:items-center"
         >
-          <ArrowDown size={14} className="animate-bounce" />
-          Scroll
-        </motion.a>
-      </motion.div>
+          <p className="max-w-xl text-lg leading-relaxed text-ink-2 sm:text-xl">{profile.subhead}</p>
+          <div className="flex flex-wrap items-center gap-4 md:justify-end">
+            <Magnetic>
+              <a
+                href="#contact"
+                className="group inline-flex items-center gap-3 rounded-full bg-ink px-7 py-4 font-mono text-xs uppercase tracking-wider text-bg transition-colors hover:bg-accent hover:text-ink"
+              >
+                Start a conversation
+                <ArrowDownRight size={16} className="transition-transform group-hover:translate-x-0.5 group-hover:translate-y-0.5" />
+              </a>
+            </Magnetic>
+            <a href="#work" className="ul label text-ink">
+              Selected work
+            </a>
+          </div>
+        </motion.div>
+      </div>
     </section>
   )
 }
