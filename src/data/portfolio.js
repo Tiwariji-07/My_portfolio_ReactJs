@@ -74,7 +74,9 @@ export const projects = [
       'A unified search-and-answer brain over Docs, Academy, Storybook and Marketplace — fused with Reciprocal Rank Fusion and streamed as grounded, cited answers.',
     tags: ['Python', 'FastAPI', 'LangGraph', 'pgvector', 'MCP'],
     year: '2026',
-    links: [],
+    links: [
+       { label: 'See it in action', href: 'https://docs.wavemaker.ai/' },
+    ],
   },
   {
     title: 'Generative UI Platform',
@@ -82,7 +84,8 @@ export const projects = [
       'AI agents that generate tables, charts and lists from a prompt — consolidating 1000+ static screens into one intelligent interface and cutting build overhead ~95%.',
     tags: ['Agents', 'Gen UI', 'React', 'LLM'],
     year: '2025',
-    links: [],
+    links: [
+    ],
   },
   {
     title: 'Furnish — Mobile Commerce',
