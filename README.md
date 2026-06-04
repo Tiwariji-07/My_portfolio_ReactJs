@@ -66,16 +66,18 @@ One-time setup:
    defaults at build time.
 3. Push to `master` (or run the workflow manually from the **Actions** tab).
 
-The site is served from a subpath, so Vite's `base` is set to
-`/My_portfolio_ReactJs/` in `vite.config.js`. Public assets are resolved through
-`import.meta.env.BASE_URL` (see the `asset()` helper in
-`src/data/portfolio.js`) so they work both locally and on Pages.
+The site is served from the **domain root** — Vite's `base` is `/` in
+`vite.config.js`. This assumes a **user-site repo** named `tiwariji-07.github.io`
+(→ `https://tiwariji-07.github.io/`) or a custom domain.
 
-If you later move to a **custom domain** or a `username.github.io` user page,
-build with `BASE_PATH=/`:
+Public assets are resolved through `import.meta.env.BASE_URL` (see the `asset()`
+helper in `src/data/portfolio.js`) so they keep working if the base changes.
+
+If you instead deploy this as a **project repo** (served from
+`username.github.io/<repo>/`), build with the matching base path:
 
 ```bash
-BASE_PATH=/ npm run build
+BASE_PATH=/<repo>/ npm run build
 ```
 
 ## Editing content
