@@ -1,31 +1,28 @@
 import Reveal from './Reveal.jsx'
 
 /**
- * Consistent section shell: anchor id, vertical rhythm, centered max width
- * and an optional eyebrow + heading block.
+ * Editorial section shell: a strong top rule, a monospace index + label, and a
+ * large serif title — like a chapter heading in a printed dossier.
  */
-export default function Section({ id, eyebrow, title, description, children, className = '' }) {
+export default function Section({ id, num, label, title, description, children, className = '' }) {
   return (
-    <section id={id} className={`scroll-mt-20 py-20 sm:py-28 ${className}`}>
+    <section id={id} className={`scroll-mt-24 py-20 sm:py-28 ${className}`}>
       <div className="container-px mx-auto w-full max-w-6xl">
-        {(eyebrow || title) && (
-          <Reveal className="mb-12 max-w-2xl">
-            {eyebrow && (
-              <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-accent">
-                {eyebrow}
-              </p>
-            )}
-            {title && (
-              <h2 className="font-display text-3xl font-bold tracking-tight text-content sm:text-4xl">
-                {title}
-              </h2>
-            )}
-            {description && (
-              <p className="mt-4 text-base leading-relaxed text-muted sm:text-lg">{description}</p>
-            )}
-          </Reveal>
-        )}
-        {children}
+        <Reveal className="rule pt-5">
+          <div className="flex items-baseline gap-5">
+            <span className="label text-accent">{num}</span>
+            <span className="label text-muted">{label}</span>
+          </div>
+          {title && (
+            <h2 className="mt-7 max-w-3xl text-balance text-4xl leading-[1.05] sm:text-5xl">
+              {title}
+            </h2>
+          )}
+          {description && (
+            <p className="mt-5 max-w-2xl text-lg leading-relaxed text-muted">{description}</p>
+          )}
+        </Reveal>
+        <div className="mt-12 sm:mt-16">{children}</div>
       </div>
     </section>
   )

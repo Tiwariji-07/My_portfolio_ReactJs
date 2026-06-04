@@ -1,15 +1,18 @@
 # Vivek Raj — Portfolio
 
-A modern, responsive personal portfolio for **Vivek Raj**, Software Developer.
-Built as a fast single-page site with a clean, professional design.
+A fast, responsive personal portfolio for **Vivek Raj**, Software Development
+Engineer (AI systems — RAG, agents, MCP). Designed as an *editorial engineering
+dossier*: warm paper, ink black, a single vermilion accent, hairline rules and
+numbered sections.
 
 ## Tech stack
 
 - **[Vite](https://vitejs.dev/)** + **[React 19](https://react.dev/)** — fast dev server and build (replaces the deprecated Create React App)
 - **[Tailwind CSS v4](https://tailwindcss.com/)** — design system and styling
-- **[Motion](https://motion.dev/)** — subtle, accessible scroll & hover animations
-- **[lucide-react](https://lucide.dev/)** — icon set
+- **[Motion](https://motion.dev/)** — staggered load reveals and subtle micro-interactions
+- **[lucide-react](https://lucide.dev/)** — UI icons (brand marks are inline SVGs)
 - **[EmailJS](https://www.emailjs.com/)** — contact form delivery (no backend required)
+- **Type**: [Fraunces](https://fonts.google.com/specimen/Fraunces) (display) · [Hanken Grotesk](https://fonts.google.com/specimen/Hanken+Grotesk) (body) · [JetBrains Mono](https://fonts.google.com/specimen/JetBrains+Mono) (metadata)
 
 ## Getting started
 
@@ -77,16 +80,17 @@ src/
   data/portfolio.js      # Single source of truth for content
   components/
     Navbar.jsx           # Sticky nav with active-section highlighting
-    Hero.jsx             # Intro / landing
-    About.jsx            # About + highlights
-    Skills.jsx           # Categorized skills
-    Projects.jsx         # Project cards
+    Hero.jsx             # Editorial intro / landing
+    About.jsx            # Narrative + facts
+    Experience.jsx       # Work history (timeline)
+    Projects.jsx         # Selected work (typographic entries)
+    Skills.jsx           # Toolkit + education + achievements
     Contact.jsx          # EmailJS contact form
     Footer.jsx           # Footer + socials
-    Section.jsx          # Shared section shell
+    Section.jsx          # Numbered editorial section shell
     Reveal.jsx           # Scroll-reveal animation wrapper
     BrandIcons.jsx       # Inline GitHub/LinkedIn/WhatsApp SVGs
-public/                  # Static images (profile, project screenshots, favicon)
+public/                  # Static assets (portrait, favicon)
 ```
 
 ## Accessibility & performance notes
