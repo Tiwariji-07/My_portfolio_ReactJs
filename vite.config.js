@@ -2,10 +2,9 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 
-// GitHub Pages serves this project repo from a subpath:
-// https://<user>.github.io/My_portfolio_ReactJs/
-// Override with BASE_PATH=/ when using a custom domain or a user/org page.
-const base = process.env.BASE_PATH ?? '/My_portfolio_ReactJs/'
+// Served from the domain root (user-site repo "tiwariji-07.github.io" or a
+// custom domain). For a project repo, set BASE_PATH=/<repo>/ at build time.
+const base = process.env.BASE_PATH ?? '/'
 
 export default defineConfig({
   base,
