@@ -12,23 +12,23 @@ export default function Footer() {
   const year = new Date().getFullYear()
 
   return (
-    <footer className="border-t border-line bg-ink">
-      <div className="container-px mx-auto flex max-w-6xl flex-col gap-8 py-12 md:flex-row md:items-center md:justify-between">
+    <footer className="container-px mx-auto max-w-6xl pb-10">
+      <div className="rule grid gap-8 pt-10 md:grid-cols-[1.5fr_1fr_auto] md:items-start">
         <div>
-          <a href="#home" className="font-display text-xl font-bold text-content">
-            {profile.name}
+          <p className="font-display text-3xl">Vivek Raj</p>
+          <p className="mt-2 max-w-xs text-muted">
+            {profile.role} building AI systems out of {profile.location}.
+          </p>
+          <a href={`mailto:${profile.email}`} className="link-underline mt-4 inline-block text-ink">
+            {profile.email}
           </a>
-          <p className="mt-2 max-w-xs text-sm text-muted">{profile.tagline}</p>
         </div>
 
         <nav aria-label="Footer">
-          <ul className="flex flex-wrap gap-x-6 gap-y-2">
-            {navLinks.map((link) => (
+          <ul className="grid grid-cols-2 gap-y-2">
+            {navLinks.slice(1).map((link) => (
               <li key={link.id}>
-                <a
-                  href={`#${link.id}`}
-                  className="text-sm text-muted transition-colors hover:text-accent"
-                >
+                <a href={`#${link.id}`} className="label text-muted transition-colors hover:text-accent">
                   {link.label}
                 </a>
               </li>
@@ -36,33 +36,23 @@ export default function Footer() {
           </ul>
         </nav>
 
-        <div className="flex items-center gap-3">
-          {social.map(({ icon: Icon, label, href }) => (
-            <a
-              key={label}
-              href={href}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={label}
-              className="flex h-10 w-10 items-center justify-center rounded-lg border border-line text-muted transition-colors hover:border-accent/60 hover:text-accent"
-            >
-              <Icon size={18} />
-            </a>
-          ))}
-          <a
-            href="#home"
-            aria-label="Back to top"
-            className="flex h-10 w-10 items-center justify-center rounded-lg border border-line text-muted transition-colors hover:border-accent/60 hover:text-accent"
-          >
-            <ArrowUp size={18} />
+        <div className="flex items-center gap-4 md:flex-col md:items-end">
+          <div className="flex gap-4">
+            {social.map(({ icon: Icon, label, href }) => (
+              <a key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={label} className="text-ink-soft transition-colors hover:text-accent">
+                <Icon size={19} />
+              </a>
+            ))}
+          </div>
+          <a href="#home" className="label inline-flex items-center gap-1.5 text-muted transition-colors hover:text-accent" aria-label="Back to top">
+            Top <ArrowUp size={13} />
           </a>
         </div>
       </div>
 
-      <div className="border-t border-line">
-        <p className="container-px mx-auto max-w-6xl py-5 text-center text-xs text-muted">
-          © {year} {profile.name}. All rights reserved.
-        </p>
+      <div className="rule-soft mt-8 flex flex-col justify-between gap-2 pt-6 sm:flex-row">
+        <p className="label text-faint">© {year} Vivek Raj</p>
+        <p className="label text-faint">Built with React · Vite · Tailwind</p>
       </div>
     </footer>
   )
