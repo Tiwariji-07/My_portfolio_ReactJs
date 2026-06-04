@@ -1,3 +1,7 @@
+// Resolve a file in /public against Vite's base path so assets work both
+// locally (base "/") and on GitHub Pages (base "/My_portfolio_ReactJs/").
+export const asset = (path) => `${import.meta.env.BASE_URL}${path.replace(/^\//, '')}`
+
 export const profile = {
   name: 'Vivek Raj',
   role: 'Software Developer',
@@ -50,7 +54,7 @@ export const projects = [
     title: 'Portfolio Website',
     description:
       'A responsive personal portfolio built with React, showcasing my work, skills and contact details with smooth, accessible interactions.',
-    image: '/personal.png',
+    image: 'personal.png',
     tags: ['React', 'Vite', 'Tailwind CSS'],
     link: 'https://github.com/Tiwariji-07',
     linkLabel: 'View source',
@@ -59,7 +63,7 @@ export const projects = [
     title: 'Netflix Clone',
     description:
       'A streaming-style UI built with React and the TMDB API, deployed on Firebase Hosting. Features browsing rows, trailers and a familiar viewing experience.',
-    image: '/netflix.png',
+    image: 'netflix.png',
     tags: ['React', 'TMDB API', 'Firebase'],
     link: 'https://netflix-clone-vivee.web.app',
     linkLabel: 'Live demo',
@@ -68,7 +72,7 @@ export const projects = [
     title: 'Employee Management System',
     description:
       'A full-stack CRUD application with a React front end and a Spring Boot REST API backed by MySQL for managing employee records.',
-    image: '/employee.png',
+    image: 'employee.png',
     tags: ['React', 'Spring Boot', 'REST', 'MySQL'],
     link: 'https://github.com/Tiwariji-07/EMS_Spring_Rjs',
     linkLabel: 'View source',

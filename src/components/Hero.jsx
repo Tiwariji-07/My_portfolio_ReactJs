@@ -1,7 +1,7 @@
 import { motion } from 'motion/react'
 import { ArrowRight, MapPin, Mail } from 'lucide-react'
 import { GithubIcon, LinkedinIcon } from './BrandIcons.jsx'
-import { profile, socials, stats } from '../data/portfolio.js'
+import { profile, socials, stats, asset } from '../data/portfolio.js'
 
 const container = {
   hidden: {},
@@ -102,7 +102,7 @@ export default function Hero() {
             <div className="absolute -inset-4 -z-10 rounded-3xl bg-gradient-to-tr from-accent/20 to-transparent blur-2xl" />
             <div className="overflow-hidden rounded-3xl border border-line bg-surface shadow-2xl shadow-black/40">
               <img
-                src="/me.jpeg"
+                src={asset('me.jpeg')}
                 alt={`Portrait of ${profile.name}`}
                 className="aspect-square w-full object-cover"
                 loading="eager"

@@ -1,7 +1,7 @@
 import { ExternalLink } from 'lucide-react'
 import Section from './Section.jsx'
 import Reveal from './Reveal.jsx'
-import { projects } from '../data/portfolio.js'
+import { projects, asset } from '../data/portfolio.js'
 
 export default function Projects() {
   return (
@@ -17,7 +17,7 @@ export default function Projects() {
             <article className="group flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-surface/60 transition-all hover:-translate-y-1 hover:border-accent/50 hover:shadow-xl hover:shadow-black/30">
               <div className="aspect-video overflow-hidden border-b border-line bg-ink">
                 <img
-                  src={project.image}
+                  src={asset(project.image)}
                   alt={`Screenshot of ${project.title}`}
                   loading="lazy"
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
