@@ -104,9 +104,9 @@ export const achievements = [
 ]
 
 export const emailConfig = {
-  serviceId: import.meta.env.VITE_EMAILJS_SERVICE_ID || 'service_f34m3jd',
-  templateId: import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'template_83u3amp',
-  publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY || 'd0YXx_dGYFDu5078C',
+  serviceId: import.meta.env.VITE_EMAILJS_SERVICE_ID || 'service_b8myste',
+  templateId: import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'template_iqe03i8',
+  publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY || 'vMqWoS2hNXjKooAUI',
 }
 
 export const navLinks = [
