@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="Vivek Raj">
+  <rect width="100" height="100" rx="22" fill="#0a0a0a" />
+  <path d="M27 29 L50 71 L73 29" fill="none" stroke="#f4f4f1" stroke-width="13"
+        stroke-linecap="round" stroke-linejoin="round" />
+  <circle cx="78" cy="69" r="7" fill="#d8ff36" />
+</svg>
