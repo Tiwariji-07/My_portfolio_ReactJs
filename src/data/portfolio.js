@@ -26,6 +26,7 @@ export const socials = {
   linkedin: 'https://www.linkedin.com/in/vr384/',
   leetcode: 'https://leetcode.com/Tiwari_ji07/',
   whatsapp: 'https://api.whatsapp.com/send?phone=916304144730',
+  x: 'https://x.com/vivekraj440551',
 }
 
 // Scrolling capability strip — high energy, low ceremony.
