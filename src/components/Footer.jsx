@@ -5,6 +5,7 @@ import { profile, navLinks, socials, asset } from '../data/portfolio.js'
 const links = [
   { label: 'GitHub', href: socials.github },
   { label: 'LinkedIn', href: socials.linkedin },
+  { label: 'X', href: socials.x },
   { label: 'LeetCode', href: socials.leetcode },
   { label: 'Résumé', href: asset(profile.resume) },
 ]

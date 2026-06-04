@@ -4,12 +4,13 @@ import { ArrowUpRight, Loader2, Check, AlertCircle } from 'lucide-react'
 import { MaskText } from './Reveal.jsx'
 import Reveal from './Reveal.jsx'
 import Magnetic from './Magnetic.jsx'
-import { GithubIcon, LinkedinIcon, WhatsappIcon } from './BrandIcons.jsx'
+import { GithubIcon, LinkedinIcon, WhatsappIcon, XIcon } from './BrandIcons.jsx'
 import { profile, socials, emailConfig, achievements } from '../data/portfolio.js'
 
 const social = [
   { icon: GithubIcon, label: 'GitHub', href: socials.github },
   { icon: LinkedinIcon, label: 'LinkedIn', href: socials.linkedin },
+  { icon: XIcon, label: 'X', href: socials.x },
   { icon: WhatsappIcon, label: 'WhatsApp', href: socials.whatsapp },
 ]
 
@@ -21,8 +22,19 @@ export default function Contact() {
     e.preventDefault()
     if (status === 'sending') return
     setStatus('sending')
+
+    // Send an explicit params object whose keys match the EmailJS template
+    // variables ({{name}}, {{email}}, {{subject}}, {{message}}).
+    const data = new FormData(formRef.current)
+    const params = {
+      name: data.get('name'),
+      email: data.get('email'),
+      subject: data.get('subject'),
+      message: data.get('message'),
+    }
+
     try {
-      await emailjs.sendForm(emailConfig.serviceId, emailConfig.templateId, formRef.current, {
+      await emailjs.send(emailConfig.serviceId, emailConfig.templateId, params, {
         publicKey: emailConfig.publicKey,
       })
       setStatus('success')
@@ -92,17 +104,17 @@ export default function Contact() {
           <form ref={formRef} onSubmit={handleSubmit} className="space-y-8">
             <div className="grid gap-8 sm:grid-cols-2">
               <div>
-                <label htmlFor="user_name" className="label text-muted">Name</label>
-                <input id="user_name" name="user_name" type="text" required autoComplete="name" placeholder="Your name" className={field} />
+                <label htmlFor="name" className="label text-muted">Name</label>
+                <input id="name" name="name" type="text" required autoComplete="name" placeholder="Your name" className={field} />
               </div>
               <div>
-                <label htmlFor="user_email" className="label text-muted">Email</label>
-                <input id="user_email" name="user_email" type="email" required autoComplete="email" placeholder="you@example.com" className={field} />
+                <label htmlFor="email" className="label text-muted">Email</label>
+                <input id="email" name="email" type="email" required autoComplete="email" placeholder="you@example.com" className={field} />
               </div>
             </div>
             <div>
-              <label htmlFor="user_subject" className="label text-muted">Subject</label>
-              <input id="user_subject" name="user_subject" type="text" placeholder="What's on your mind?" className={field} />
+              <label htmlFor="subject" className="label text-muted">Subject</label>
+              <input id="subject" name="subject" type="text" placeholder="What's on your mind?" className={field} />
             </div>
             <div>
               <label htmlFor="message" className="label text-muted">Message</label>
