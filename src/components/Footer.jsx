@@ -65,7 +65,7 @@ export default function Footer() {
 
         <div className="flex flex-col justify-between gap-2 border-t border-bg/15 py-6 sm:flex-row">
           <p className="label text-faint">© {year} {profile.name}</p>
-          <p className="label text-faint">Built with curiosity &amp; chai ✦</p>
+          <p className="label text-faint">Built with React and Vite</p>
         </div>
       </div>
     </footer>

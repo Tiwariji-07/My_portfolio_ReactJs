@@ -136,10 +136,10 @@ export default function Contact() {
 
             <div aria-live="polite">
               {status === 'success' && (
-                <p className="flex items-center gap-2 font-mono text-sm text-ink"><Check size={16} /> Thanks — I&apos;ll be in touch soon.</p>
+                <p className="flex items-center gap-2 font-mono text-sm text-ink"><Check size={16} /> Thanks. I&apos;ll reply soon.</p>
               )}
               {status === 'error' && (
-                <p className="flex items-center gap-2 font-mono text-sm text-red-600"><AlertCircle size={16} /> Something broke. Email me at {profile.email}.</p>
+                <p className="flex items-center gap-2 font-mono text-sm text-red-600"><AlertCircle size={16} /> The message didn&apos;t send. Email me at {profile.email}.</p>
               )}
             </div>
           </form>
