@@ -1,0 +1,167 @@
+%-------------------------
+% Resume in LaTeX, based on Jake Gutierrez's template (MIT)
+%-------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{iftex}
+\ifPDFTeX
+  \input{glyphtounicode}
+  \pdfgentounicode=1
+\fi
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+\newcommand{\resumeItem}[1]{\item\small{{#1 \vspace{-2pt}}}}
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\begin{document}
+
+%----------HEADING----------
+% The phone number is left out on purpose: this copy is public on the portfolio.
+\begin{center}
+    \textbf{\Huge \scshape Vivek Raj} \\ \vspace{1pt}
+    \small \href{mailto:hirevivekraj@gmail.com}{\underline{hirevivekraj@gmail.com}} $|$
+    \href{https://www.linkedin.com/in/vr384/}{\underline{linkedin.com/in/vr384}} $|$
+    \href{https://github.com/Tiwariji-07}{\underline{Github}} $|$
+    \href{https://x.com/vivekraj440551}{\underline{X}} $|$
+    \href{https://tiwariji-07.github.io/}{\underline{tiwariji-07.github.io}}
+\end{center}
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Senior Software Engineer}{September 2026 -- Present}
+      {Innovapptive}{Hyderabad, IN}
+      \vspace{3pt}
+
+    \resumeSubheading
+      {Software Development Engineer}{April 2025 -- September 2026}
+      {Wavemaker Inc}{Hyderabad, IN}
+      \resumeItemListStart
+        \resumeItem{Led the design and rollout of a production multi-source \textbf{RAG + agent platform} powering search and grounded Q\&A across \textbf{600+} live documentation pages, \textbf{50+} Academy video transcripts, \textbf{60+} components from Storybook and Marketplace, now the default knowledge layer for internal developer tooling.}
+        \resumeItem{Architected and deployed a Gen UI application leveraging AI agents to dynamically generate data visualizations (tables, charts, lists) based on user prompts, consolidating 1000+ static screens into a single intelligent interface and reducing development overhead by 95\%.}
+        \resumeItem{Developed custom MCP (Model Context Protocol) integrations enabling seamless data retrieval through Swagger APIs, allowing the AI agent to construct POST request bodies automatically and eliminating manual data configuration processes.}
+        \resumeItem{Engineered an MCP server for WaveMaker marketplace integration, enabling developers to programmatically add and publish artifacts to the marketplace, streamlining external artifact integration and reducing deployment time by 60\%.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Associate Software Engineer}{June 2023 -- April 2025}
+      {Wavemaker Inc}{Hyderabad, IN}
+      \resumeItemListStart
+        \resumeItem{Built and maintain comprehensive Storybook documentation for 50+ React Native components, reducing developer onboarding time by 40\% and accelerating integration across 15+ client projects.}
+        \resumeItem{Developed an AI-powered chatbot using LLaMA3 and MedLLaMA2 models to streamline symptom analysis, department recommendation, and appointment booking, reducing appointment booking time by 30\% and improving symptom analysis accuracy by 25\%.}
+        \resumeItem{Conducted in-depth assessment of React Native application performance, identifying 5+ critical limitations and implementing best practices that led to smoother user interface, enhancing performance by 30\%.}
+        \resumeItem{Maintained and enhanced the company's marketplace for sharing prefabs, themes, and connectors, ensuring 100\% functionality in documentation and code while improving resource accessibility by 40\%.}
+        \resumeItem{Created proof of concepts (POCs) for emerging technologies to demonstrate capabilities to new customers, accelerating the onboarding process by 30\%.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Web Developer Intern}{January 2023 -- May 2023}
+      {Wavemaker Inc}{Hyderabad, IN}
+      \resumeItemListStart
+        \resumeItem{Developed 20+ web pages using HTML, CSS, Bootstrap, and JavaScript, enhancing user interface and experience.}
+        \resumeItem{Architected a full-stack financial management system using HTML, Bootstrap, CSS, JavaScript, and Java, featuring automated expense tracking, bill reminders, and goal setting, improving task efficiency by 40\%.}
+        \resumeItem{Implemented theme customization and flexible data export functionality, enhancing user experience and increasing user efficiency by 40\%.}
+        \resumeItem{Engineered 34 REST API endpoints using Spring, enhancing application functionality and scalability, contributing to a 25\% reduction in response times and improved overall system performance.}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{Projects}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {\textbf{WaveMaker Ecosystem Agent \& Docs MCP} $|$ \emph{Python, FastAPI, LangGraph, pgvector}}{Sept 2025 -- May 2026}
+          \resumeItemListStart
+            \resumeItem{Built a unified search-and-answer service that queries multiple MCP-backed sources (Docs, Academy, Storybook, Marketplace), fuses results via \textbf{Reciprocal Rank Fusion}, and streams grounded, citation-backed answers as NDJSON over FastAPI.}
+            \resumeItem{Implemented the Docs MCP retrieval server on \textbf{Postgres + pgvector} with \textbf{HNSW} indexing and FTS-based hybrid search, layered with \textbf{Jina reranking} (evaluated against self-hosted \texttt{bge-reranker-v2-m3}) to lift retrieval precision, exposed as MCP tools (\texttt{search\_docs}, \texttt{get\_doc}, \texttt{list\_doc\_types}) with health/readiness probes and connection-pool-bounded concurrency.}
+            \resumeItem{Instrumented end-to-end \textbf{Langfuse} tracing for retrieval quality, latency, and token spend; added optional Redis result caching and an LLM \textbf{planner} that selects sources and rewrites per-source queries before fusion.}
+          \resumeItemListEnd
+      \resumeProjectHeading
+          {\textbf{Furnish} $|$ \emph{Github: \href{https://github.com/Tiwariji-07/React-Native-Ecommerce/}{\underline{Frontend}} \href{https://github.com/Tiwariji-07/ecommerce-backend/}{\underline{Backend}}}}{March 2023 - April 2023}
+          \resumeItemListStart
+            \resumeItem{Architected a cross-platform e-commerce application using React Native, enabling seamless user experiences on iOS and Android in 2 weeks.}
+            \resumeItem{Integrated 21 RESTful API endpoints using Express.js for secure user authentication, product management, order handling, and payments, improving scalability and reducing response times by 30\%.}
+            \resumeItem{Constructed 14 screens and over 13 components, leveraging Formik and Yup for efficient form handling, reducing form validation time by 70\% and improving overall user input accuracy.}
+          \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+%-----------TECHNICAL SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: Python, Java, TypeScript, JavaScript, SQL (Postgres, MySQL), HTML/CSS} \\
+     \textbf{Frameworks}{: FastAPI, FastMCP, LangGraph, LangChain, React, React Native, Node.js, Express.js, Spring} \\
+     \textbf{AI / LLM}{: RAG (hybrid search, reranking), AI Agents, MCP (Model Context Protocol), LiteLLM, OpenAI, Langfuse} \\
+     \textbf{Data \& Retrieval}{: PostgreSQL, pgvector (HNSW), Full-Text Search, Vector DBs, MongoDB, Firebase Firestore} \\
+     \textbf{Developer Tools}{: Git, Docker, Jenkins, Postman, Swagger/OpenAPI, Storybook, VS Code, IntelliJ}
+    }}
+ \end{itemize}
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Malla Reddy College of Engineering and Technology}{August 2019 - June 2023}
+      {BTech in Computer Science and Engineering, CGPA: 8.38, Graduated: 8th June 2023}{}
+  \resumeSubHeadingListEnd
+
+%-----------ACHIEVEMENTS-----------
+\section{Achievements and Certificates}
+  \begin{itemize}
+    \resumeItem{MongoDB Dev Toolkit: \href{https://www.geeksforgeeks.org/certificate/649ea5117dbae94e35b1ed66bb1de99d}{\underline{Link}}}
+    \resumeItem{\href{https://leetcode.com/Tiwari_ji07/}{\underline{Leetcode}}: (Highest Rating 1469 and solved 100+ problems).}
+    \resumeItem{Participated in 100xDevs Solana Mini Hackathon.}
+  \end{itemize}
+
+\end{document}
