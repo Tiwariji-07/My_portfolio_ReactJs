@@ -4,14 +4,13 @@ import { ArrowUpRight, Loader2, Check, AlertCircle } from 'lucide-react'
 import { MaskText } from './Reveal.jsx'
 import Reveal from './Reveal.jsx'
 import Magnetic from './Magnetic.jsx'
-import { GithubIcon, LinkedinIcon, WhatsappIcon, XIcon } from './BrandIcons.jsx'
+import { GithubIcon, LinkedinIcon, XIcon } from './BrandIcons.jsx'
 import { profile, socials, emailConfig, achievements } from '../data/portfolio.js'
 
 const social = [
   { icon: GithubIcon, label: 'GitHub', href: socials.github },
   { icon: LinkedinIcon, label: 'LinkedIn', href: socials.linkedin },
   { icon: XIcon, label: 'X', href: socials.x },
-  { icon: WhatsappIcon, label: 'WhatsApp', href: socials.whatsapp },
 ]
 
 export default function Contact() {
@@ -63,7 +62,7 @@ export default function Contact() {
             <a href={`mailto:${profile.email}`} className="ul inline-block text-2xl font-semibold sm:text-3xl">
               {profile.email}
             </a>
-            <p className="mt-3 font-mono text-sm text-muted">{profile.phone} · {profile.location}</p>
+            <p className="mt-3 font-mono text-sm text-muted">{profile.location}</p>
           </Reveal>
 
           <Reveal delay={0.05}>

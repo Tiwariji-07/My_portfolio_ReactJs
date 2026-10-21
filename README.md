@@ -1,7 +1,7 @@
 # Vivek Raj — Portfolio
 
-A fast, responsive personal portfolio for **Vivek Raj**, Software Development
-Engineer (AI systems — RAG, agents, MCP). A **bold minimal** design: off-white +
+A fast, responsive personal portfolio for **Vivek Raj**, Senior Software
+Engineer at Innovapptive (AI systems — RAG, agents, MCP). A **bold minimal** design: off-white +
 ink black, oversized grotesk type, one acid-lime accent, and rich interactive
 motion.
 
@@ -24,9 +24,8 @@ the custom cursor and magnetic effects are disabled on touch devices.
 
 ## Add your photo
 
-The hero/portrait uses `public/vivek.png`. Drop a **transparent-background
-cutout** there (PNG) and it appears automatically with the lime backdrop. Until
-then it falls back to `public/me.jpeg`. To change the file name, edit
+The hero/portrait uses `public/vivek.jpg` and falls back to `public/me.jpeg`
+if that file is missing. To change the file name, edit
 `profile.photo` in `src/data/portfolio.js`.
 
 ## Getting started
@@ -80,6 +79,18 @@ If you instead deploy this as a **project repo** (served from
 BASE_PATH=/<repo>/ npm run build
 ```
 
+## Updating the resume
+
+`public/Vivek_Raj_Resume.pdf` is compiled from [`resume/resume.tex`](resume/resume.tex).
+Edit the `.tex` file, then rebuild with any LaTeX engine, for example
+[Tectonic](https://tectonic-typesetting.github.io/):
+
+```bash
+tectonic resume/resume.tex --outdir resume && mv resume/resume.pdf public/Vivek_Raj_Resume.pdf
+```
+
+Keep the phone number out of the public copy.
+
 ## Editing content
 
 All site content (bio, skills, projects, social links, contact details) lives in
@@ -107,8 +118,9 @@ src/
     About.jsx            # Personal story + toolkit + trajectory
     Contact.jsx          # Big CTA + EmailJS form
     Footer.jsx           # Animated giant-name footer
-    BrandIcons.jsx       # Inline GitHub/LinkedIn/WhatsApp SVGs
-public/                  # Static assets (vivek.png portrait, me.jpeg fallback, favicon)
+    BrandIcons.jsx       # Inline GitHub/LinkedIn/X SVGs
+public/                  # Static assets (portrait, resume PDF, favicon)
+resume/resume.tex        # LaTeX source for public/Vivek_Raj_Resume.pdf
 ```
 
 ## Accessibility & performance notes
