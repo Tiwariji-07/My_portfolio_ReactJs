@@ -42,7 +42,7 @@ export default function Navbar() {
         }`}
       >
         <nav className="container-px mx-auto flex h-20 max-w-[1600px] items-center justify-between">
-          <a href="#home" className="display text-xl leading-none" aria-label={`${profile.name} — home`}>
+          <a href="#home" className="display text-xl leading-none" aria-label={`${profile.name}, home`}>
             {profile.first}
             <span className="text-accent">.</span>
           </a>
